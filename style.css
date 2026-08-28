@@ -122,7 +122,7 @@ section h2 {
 section p {
     font-size: 1.05rem;
     color: var(--text-muted);
-    text-align: justify;
+    /*text-align: justify;*/
 }
 
 /* 6. Tablet & Desktop Enhancements */
