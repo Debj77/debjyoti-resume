@@ -34,13 +34,14 @@ header h1 {
     gap: 30px;
     align-items: center;
     margin: 15px 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .title-section p {
     margin: 0;
     font-size: 16px;
     color: #666;
+    white-space: nowrap;
 }
 
 .contact-details {
@@ -106,16 +107,18 @@ section h2 {
         font-size: 24px;
     }
 
-    /* Stack title section vertically on mobile */
+    /* Keep title section on one line with horizontal scrolling if needed */
     .title-section {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        gap: 15px;
         margin: 15px 0;
+        overflow-x: auto;
     }
 
     .title-section p {
         font-size: 14px;
-        width: 100%;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .contact-details {
@@ -152,16 +155,18 @@ section h2 {
         font-size: 20px;
     }
 
-    /* Ensure full width vertical layout on small screens */
+    /* Keep title section on one line */
     .title-section {
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        gap: 10px;
         margin: 12px 0;
+        overflow-x: auto;
     }
 
     .title-section p {
         font-size: 13px;
-        width: 100%;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .contact-details {
