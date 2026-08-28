@@ -6,6 +6,8 @@
     <title>My Professional Resume</title>
     <!-- Link to your separate CSS file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -13,6 +15,23 @@
         <header>
             <h1 id="main-title">Debjyoti Dey</h1>
             <p>Assistant Manager | Industrial Automation | DRI - Electrical & Instrumentation</p>
+            
+            <!-- Contact Details Section -->
+            <div class="contact-details">
+                <a href="mailto:deydebjyoti1991@gmail.com" class="contact-link" title="Send Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+919540937247" class="contact-link" title="Call">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="sms:+919540937247" class="contact-link" title="Send SMS">
+                    <i class="fas fa-sms"></i>
+                </a>
+                <a href="javascript:void(0)" class="contact-link" title="Share" onclick="shareResume()">
+                    <i class="fas fa-share-alt"></i>
+                </a>
+            </div>
+
             <!-- Download Button -->
             <a href="Resume_Debjyoti.pdf" download id="download-btn">⬇️ Download PDF Resume</a>
         </header>
@@ -25,5 +44,24 @@
 
     <!-- Link to your separate JS file just before the closing body tag -->
     <script src="script.js"></script>
+    <script>
+        function shareResume() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Debjyoti Dey - Professional Resume',
+                    text: 'Check out my professional resume',
+                    url: window.location.href
+                }).catch(err => console.log('Share cancelled or failed'));
+            } else {
+                // Fallback: Copy URL to clipboard
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Resume link copied to clipboard!');
+                }).catch(err => {
+                    alert('Failed to copy link');
+                });
+            }
+        }
+    </script>
 </body>
 </html>
