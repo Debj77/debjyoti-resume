@@ -34,7 +34,7 @@ header h1 {
     gap: 30px;
     align-items: center;
     margin: 15px 0;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .title-section p {
