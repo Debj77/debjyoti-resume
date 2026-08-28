@@ -1,188 +1,149 @@
-/* style.css */
-body {
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+/* 1. Base Styles & Variables */
+:root {
+    --primary-blue: #004a99; /* Professional industrial blue */
+    --accent-blue: #007bff;
+    --text-dark: #1a1a1a;
+    --text-muted: #555555;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 15px;
 }
 
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-width: 600px;
-    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
 }
 
+/* 2. Header & Title Styling */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-header h1 {
-    margin: 0 0 10px 0;
-    font-size: 28px;
+#main-title {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
-/* Title Section - Responsive Layout */
 .title-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-    margin: 15px 0;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .title-section p {
-    margin: 0;
-    font-size: 16px;
-    color: #666;
-    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 2px 0;
 }
 
+/* 3. Contact Icons Bar */
 .contact-details {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 15px;
     margin: 20px 0;
 }
 
 .contact-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    color: #a8d5ff;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-light);
+    color: var(--primary-blue);
     text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
 .contact-link:hover {
-    color: #2563eb;
-    transform: scale(1.2);
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-3px);
 }
 
-section {
-    margin-bottom: 20px;
-}
-
-section h2 {
-    font-size: 20px;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
+/* 4. Download Button */
 #download-btn {
     display: inline-block;
-    background-color: #2563eb;
-    color: white;
-    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 14px 28px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    transition: background 0.3s ease, transform 0.2s;
+    margin-top: 10px;
+    width: 100%; /* Full width on mobile for easy tapping */
 }
 
 #download-btn:hover {
-    background-color: #1d4ed8;
+    background-color: var(--primary-blue);
+    transform: scale(1.02);
 }
 
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
+/* 5. Sections */
+section h2 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    border-left: 5px solid var(--primary-blue);
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+section p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+/* 6. Tablet & Desktop Enhancements */
+@media (min-width: 600px) {
     body {
-        padding: 15px;
+        padding: 40px 20px;
+    }
+
+    #main-title {
+        font-size: 2.5rem;
     }
 
     .container {
-        padding: 20px;
-        border-radius: 8px;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    /* Keep title section on one line with horizontal scrolling if needed */
-    .title-section {
-        flex-direction: row;
-        gap: 15px;
-        margin: 15px 0;
-        overflow-x: auto;
-    }
-
-    .title-section p {
-        font-size: 14px;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-
-    .contact-details {
-        gap: 20px;
-    }
-
-    .contact-link {
-        font-size: 24px;
-    }
-
-    section h2 {
-        font-size: 18px;
+        padding: 50px;
     }
 
     #download-btn {
-        padding: 12px 24px;
-        font-size: 14px;
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    /* Keep title section on one line */
-    .title-section {
-        flex-direction: row;
-        gap: 10px;
-        margin: 12px 0;
-        overflow-x: auto;
-    }
-
-    .title-section p {
-        font-size: 13px;
-        white-space: nowrap;
-        flex-shrink: 0;
+        width: auto; /* Return to natural size on larger screens */
     }
 
     .contact-details {
-        gap: 18px;
-    }
-
-    .contact-link {
-        font-size: 22px;
-    }
-
-    section h2 {
-        font-size: 16px;
-    }
-
-    #download-btn {
-        padding: 10px 16px;
-        font-size: 13px;
+        gap: 25px;
     }
 }
